@@ -7,6 +7,7 @@
     <title>Justin Mihigo</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./resources/logo.svg" type="image/svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
     <header>
@@ -26,11 +27,11 @@
                 </ul>
             </div>
             <div id="download">
-                <button> Download CV</button>
+                <button class="button"> Download CV</button>
             </div>
         </nav>
     </header>
-    <section class="home">
+    <section class="section-styles" id="home">
         <div class="intro">
         <h3>Hi I am,</h3>
         <h2 class="color">Justin Mihigo</h2>
@@ -38,10 +39,238 @@
         <p>Level up your profitability and increase the availability of your business resources. <br>
             Dou want to secure your data, or you want to improve your 
             profitablity?</p>
-            <button>Get in Touch</button>
+            <button class="button"> Get in Touch</button>
         </div>
         <div class="banner">
-            <img src="./resources/home.png" width="450px" height="auto" alt="home">
+            <img src="./resources/home.png" width="400px" height="auto" alt="home">
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <h3>My skills</h3>
+        <h1>Skills</h1>
+        <p>Get top notch services with me, People don't judge on our bad services cause we have none, 
+            but good ones</p>
+        <div class="articles">
+            <article class="skill">
+            <img src="./resources/analytics.svg" width="40px" height="auto">
+            <h3>Data analytics</h3>
+            <p>Azubi certified business
+            analyst, with 2+ years of
+            experience in Python,
+            Excel, Knime and ML.</p>
+            </article>
+            <article class="skill">
+                <img src="./resources/cloud.svg" width="40px" height="auto">
+                <h3>Cloud solutions</h3>
+                <p>
+                    Utiva certified Cloud
+                    developer with 1+ year
+                    experience. With skills in
+                    DevOps, and MS Azure
+                    services.
+                </p>
+                </article>
+                <article class="skill">
+                    <img src="./resources/graphic.svg" width="40px" height="auto">
+                    <h3>Graphic Designer</h3>
+                    <p>
+                        Proficient graphic designer
+                        with keen eye to details,
+                        who utilizes different tools
+                        eg. Adobe illustrator to
+                        produce quality designs
+                    </p>
+                    </article>
+                    <article class="skill">
+                        <img src="./resources/uiux.svg" width="40px" height="auto">
+                        <h3>UI&UX</h3>
+                        <p>
+                            Experienced UI&UX who
+                            utilizes Figma to produce
+                            eye catching prototypes.
+                        </p>
+                        </article>
+        </div>
+    </section>
+    <section class="section-styles" id="aboutme">
+        <div class="banner">
+            <img src="./resources/aboutme.png" width="450px" height="auto" alt="banner image" >
+        </div>
+        <div class="desc">
+            <h1>
+                About me
+            </h1>
+            <p>
+                Certified by Azubi and Utiva in Business analytics and
+                Cloud development respectively, this gave me
+                foundation to advanced Excel, introduction to Python, ML,
+                Databases and MySQL, Linux, and MS Azure services and
+                CI/CD basics.
+            </p>
+            <br>
+            <h4>Data analytics</h4>
+            <div class="level">
+                <div class="rectangle1"></div>
+                <div class="circle"></div>
+            </div>
+            <h4>Cloud solutions</h4>
+            <div class="level">
+                <div class="rectangle2"></div>
+                <div class="circle"></div>
+            </div>
+            <h4>Graphic Designer</h4>
+            <div class="level">
+                <div class="rectangle3"></div>
+                <div class="circle"></div>
+            </div>
+            <h4>UI&UX</h4>
+            <div class="level">
+                <div class="rectangle4"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <h3> Recent projects</h3>
+        <h1 class="center">Portfolio</h1>
+        <div class="links">
+            <ul>
+                <li><a href="#">All</a></li>
+                <li><a href="#" style="color:white">UI&UX</a></li>
+                <li><a href="#">Website Design</a></li>
+                <li><a href="#">Graphic Design</a></li>
+                <li><a href="#">App design</a></li>
+            </ul>
+            <div class="articles">
+                <article class="article box">
+                <img src="./resources/portfolio-photo.png" width="300px" height="auto" alt="project1"/>
+            
+                <p class="color fontsize">UI&UX</p>
+                <p><b>Aircalling Landing Page</b></p>
+                </article>
+                <article class="article box">
+                    <img src="./resources/portfolio-photo.png" width="300px" height="auto" alt="project1"/>
+                    <p class="color fontsize">UI&UX</p>
+                    <p><b>Aircalling Landing Page</b></p>
+                </article>
+                <article class="article box">
+                    <img src="./resources/portfolio-photo.png" width="300px" height="auto" alt="project1"/>
+                    <p class="color fontsize">UI&UX</p>
+                    <p><b>Aircalling Landing Page</b></p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section class="testimonials" id="testimonials">
+        <h3> Client's feedback</h3>
+        <h1 class="center">Testimonials</h1>
+        <div class="testimony-list">
+            <article class="testimony">
+                <div class="holder">
+                    <img src="./resources/justinpass.png"  alt="photo">
+                </div>
+                <div class="message">
+                    <p>
+                        Let me give this man credit for how he helped us boost
+                        profitability, by using his extensive research to help us thrive in
+                        this environment and be ahead of our competitors. He is
+                        diligent individual, other people can rely on him, so would you.
+                    </p>
+                    <p><b>Mupenzi Arnaud</b></p>
+                    <p>CEO</p>
+                </div>
+            </article>
+            </div>
+            <div class="sliders">
+                <div class="slider"></div>
+                <div class="slider background"></div>
+                <div class="slider"></div>
+                <div class="slider"></div>
+                </div>
+                <div class="btn"><button class="feedback-btn">Give us Feedback</button>
+                </div>
+    </section>
+    <section class="blogs" id="blogs">
+        <h3>Recent posts</h3>
+        <h1 class="center">Blogs</h1>
+        <br>
+        <p class="center">For more general knowledge information read the Blogs or Signup for my
+           <a href="#contactme" class="color">Newsletter</a> </p>
+        <br>
+        <div class="blog-list">
+            <article class="blog">
+                <img src="./resources/image1.png" width="200" height="auto" alt="react js">
+                <p class="center"><b>Why React.Js</b></p>
+                <p class="desc"> React is a javascript library, created by...
+                </p>
+                <button class="special">Read me</button>
+            </article>
+            <article class="blog">
+                <img src="./resources/image2.png" width="200" height="auto" alt="react js">
+                <p class="center"><b>Collaboration</b></p>
+                <p class="desc"> Collaboration is the one of the best thing that...
+                </p>
+                <button class="special">Read me</button>
+            </article>
+            <article class="blog">
+                <img src="./resources/image3.png" width="200" height="auto" alt="react js">
+                <p class="center"><b>10 languages</b></p>
+                <p class="desc"> In this 2024, there are too many programming....
+                </p>
+                <button class="special">Read me</button>
+            </article>
+            <article class="blog">
+                <img src="./resources/image4.png" width="200" height="auto" alt="react js">
+                <p class="center"><b>REST APIs</b></p>
+                <p class="desc"> REST API stands for Represantational state....
+                </p>
+                <button class="special">Read me</button>
+            </article>
+        </div>
+    </section>
+    <section class="contactme" id="contactme">
+        <h3> Get in Touch</h3>
+        <h1 class="center">Contact me</h1>
+        <p class="center">Let's connect</p>
+        <div class="input-fields">
+            <form action="">
+                <div class="inputs">
+                    <div>
+                        <label for="fname">First name</label>
+                        <input type="text" name="fname" id="fname">
+                    </div>
+                    <div>
+                        <label for="lname">Last name</label>
+                        <input type="text" name="lname" id="lname">
+                    </div>
+                    <div>
+                        <label for="phone">Phone number</label>
+                        <input type="text" name="phone" id="phone">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div> 
+                </div>
+                
+                <label for="questions">Choose a topic</label> 
+                <select id="questions" >
+                    <option value="">Select one...</option>
+                    <option value="Responsiveness">Responsiveness</option>
+                    <option value="Customer services">Customer services</option>
+                </select>
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="5" placeholder="Your message here"></textarea>
+                <input type="checkbox" id="subs" /> Subscribe for our newsletter;
+                <input type="checkbox" id="terms">I accept the terms;
+            </form>
         </div>
     </section>
 </body>
