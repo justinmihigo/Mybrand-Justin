@@ -3,6 +3,9 @@
 :root{
     --color:#FD6F00;
 }
+html{
+    scroll-behavior: smooth;
+}
 *{
     margin:0;
     padding:0;
@@ -29,6 +32,27 @@ ul{
     display: flex;
     gap:20px;
 }
+.typewriter{
+    width: fit-content;
+    overflow: hidden;
+    text-wrap: nowrap;
+    letter-spacing: 0.15rem;
+    margin: 0 auto;
+    border-right:.15rem solid #FD6F00;
+    animation: typing 3.5s steps(20,end), blink-caret .75s infinite ;
+  }
+  
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
 nav{
   display: flex;
   justify-content: space-between;
@@ -75,6 +99,7 @@ h1{
 }
 .skill{
     width:20%;
+    height:270px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -88,13 +113,20 @@ h1{
     padding-top:50px;
     margin-bottom:50px;
 }
-.skills h1, .skills p, .center{
+.skills h1, .center{
     text-align: center;
+}
+.skills p{
+    text-align: justify;
+}
+.box{
+    width:30%;
 }
 .articles, .blog-list{
     padding:30px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .desc{
     width:50%;
@@ -143,7 +175,7 @@ h1{
     background-color: var(--color);
     color:white;
 }
-.links ul li a{
+.links ul li a, .footer-links ul li a{
     color:black;
 }
 
@@ -152,7 +184,7 @@ h1{
 }
 .box{
     background-color: rgb(227, 222, 231);
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
 }
 .box  p{
@@ -240,7 +272,7 @@ form{
     border-radius: 10px;
     border:2px solid #FD6F00;
 }
-textarea, select, input{
+textarea, select, input[type="text"], input[type="email"]{
     width:100%;
 }
 input,select,textarea{
@@ -252,7 +284,7 @@ input,select,textarea{
 label, select, textarea{
     padding:10px 0;
 }
-label, input, select, textarea{
+label, input[type="text"], select, textarea{
     display:block;
 }
 .inputs{
@@ -265,6 +297,161 @@ label, input, select, textarea{
 textarea::placeholder{
     padding:10px;
 }
+textarea{
+    margin-bottom: 10px;
+}
 select{
     padding:10px 10px 10px 10px;
+}
+.check{
+    display: inline;
+    width:unset;
+    margin-left: 10px;
+    padding: 5px 0;
+}
+input[type="checkbox"]{
+    vertical-align: middle;
+}
+.centered{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.footer-links ul{
+    display: flex;
+    gap:20px;
+}
+.hidden{
+    display: none;
+}
+.box img{
+    width: 100%;
+}
+@media screen  and (max-width:1002px) {
+    #navlinks ul li:nth-child(even){
+        display:none;
+    }
+    .hidden{
+        display:block;
+    }
+    #padding{
+        padding:0px;
+    }
+    h1{
+      font-size: 2rem;  
+    }
+    
+}
+@media screen and (min-width:800px) and (max-width:1000px) {
+    .articles{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .article{
+        width: 40%;
+        margin: 20px 0px;
+    }
+    .box{
+        width: 40%;
+    }
+    .skill{
+        width: 40%;
+        margin: 10px 0;
+    }
+    .testimony{
+        width: 100%;
+    }
+    .blog-list{
+        flex-wrap: wrap;
+    }
+    .blog{
+        width: 30%;
+    }
+}
+@media screen  and (max-width:645px){
+    #navlinks ul li{
+        display:none;
+    }
+    .hidden{
+        display:block;
+    }
+
+}
+@media screen  and (max-width:450px){
+    #navlinks ul li{
+        display:none;
+    }
+    .hidden{
+        display:block;
+    }
+    #download{
+        display: none;
+    }
+}
+@media screen and (max-width:800px) {
+    .section-styles{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .intro,.desc{
+        width: 80%
+    }
+    #download{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .articles, .blog-list{
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .skill{
+        width: 40%;
+        margin: 20px 0;
+    }
+    .blog{
+        width:30%;
+        margin: 10px -5px;
+    }
+    .box{
+        margin:10px 0;
+    }
+    .testimony{
+        width:100%;
+    }
+}
+@media screen and (max-width:600px) {
+    .inputs{
+        grid-template-columns: 1fr;
+    }
+    .articles{
+        align-items: center;
+    }
+    
+    .made-by {
+        display: none;
+    }
+    .articles,.blog-list{
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .blog, .article{
+        width:60%;
+    }
+    .skills{
+       gap: 20px;
+    }
+    .skill{
+        margin:10px 10px;
+        width:100%;
+    }
+    .testimony{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+    }
 }

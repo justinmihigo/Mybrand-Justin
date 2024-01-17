@@ -15,6 +15,9 @@
             <div id="logo">
                 <img src="./resources/justin-full.svg" width="150" height="auto" alt="mylogo"/>
             </div>
+            <div class="hidden">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <div id="navlinks">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -33,13 +36,16 @@
     </header>
     <section class="section-styles" id="home">
         <div class="intro">
-        <h3>Hi I am,</h3>
-        <h2 class="color">Justin Mihigo</h2>
-        <h1>Business Analyst &<br><span id="padding">Cloud Developer<span></h1>
-        <p>Level up your profitability and increase the availability of your business resources. <br>
-            Dou want to secure your data, or you want to improve your 
-            profitablity?</p>
-            <button class="button"> Get in Touch</button>
+            <h3>Hi I am,</h3>
+            <h2 class="color typewriter">Justin Mihigo</h2>
+            <h1>Business Analyst &<br><span id="padding">Cloud Developer<span></h1>
+            <p>Level up your profitability and increase the availability of your business resources. <br>
+                Dou want to secure your data, or you want to improve your 
+                profitablity?
+            </p>
+            <div>
+            <button class="button" role="link">Get in Touch</button>
+            </div>
         </div>
         <div class="banner">
             <img src="./resources/home.png" width="400px" height="auto" alt="home">
@@ -149,18 +155,18 @@
             </ul>
             <div class="articles">
                 <article class="article box">
-                <img src="./resources/portfolio-photo.png" width="300px" height="auto" alt="project1"/>
+                <img src="./resources/portfolio-photo.png" height="auto" alt="project1"/>
             
                 <p class="color fontsize">UI&UX</p>
                 <p><b>Aircalling Landing Page</b></p>
                 </article>
                 <article class="article box">
-                    <img src="./resources/portfolio-photo.png" width="300px" height="auto" alt="project1"/>
+                    <img src="./resources/portfolio-photo.png" height="auto" alt="project1"/>
                     <p class="color fontsize">UI&UX</p>
                     <p><b>Aircalling Landing Page</b></p>
                 </article>
                 <article class="article box">
-                    <img src="./resources/portfolio-photo.png" width="300px" height="auto" alt="project1"/>
+                    <img src="./resources/portfolio-photo.png" height="auto" alt="project1"/>
                     <p class="color fontsize">UI&UX</p>
                     <p><b>Aircalling Landing Page</b></p>
                 </article>
@@ -268,10 +274,53 @@
                 </select>
                 <label for="message">Message</label>
                 <textarea name="message" id="message" cols="30" rows="5" placeholder="Your message here"></textarea>
-                <input type="checkbox" id="subs" /> Subscribe for our newsletter;
-                <input type="checkbox" id="terms">I accept the terms;
+    
+                <input type="checkbox" id="subs" /><label class="check" for="subs">Subscribe for our newsletter</label>
+                <br>
+                <input type="checkbox"  id="terms"><label class="check" for="terms">I accept the terms</label>
+                <br> 
+                <div class="centered">
+                <input type="submit" value="Submit" id="submit" class="button">
+                </div>
             </form>
         </div>
     </section>
+    <footer>
+        <nav>
+            <div id="logo">
+                <img src="./resources/justin-full.svg" width="150" height="auto" alt="mylogo"/>
+            </div>
+            <div id="navlinks">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#aboutme">About me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#contactme">Contact me</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </div>
+            <div id="download">
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </div>
+        </nav>
+        <hr>
+        <nav>
+            <div class="made-by">Made by Justin Mihigo</div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Cookies settings</a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
 </body>
 </html>
