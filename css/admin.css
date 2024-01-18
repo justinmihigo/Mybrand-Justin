@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+:root{
+    --color:#FD6F00;
+    --bg-color: rgb(227, 222, 231);
+}
+*{
+    margin:0;
+    padding:0;
+    font-family:poppins;
+}
+section{
+    padding-top:50px;
+}
+body{
+    width:90%;
+    margin:auto;
+}
+a{
+   text-decoration: none; 
+}
+#navlinks ul a{
+    color: black;
+}
+header{
+    position: sticky;
+    padding:-20px 0;
+    top:0;
+
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:30px 0;
+  }
+  .hidden{
+    display: none;
+  }
+  .centered{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+input,textarea{
+    padding: 10px;
+    outline: none;
+    border: 1.5px solid var(--color);
+    border-radius: 10px;
+    width: 300px;
+}
+label,input{
+    display: block;
+}
+label{
+    padding: 5px 0;
+}
+
+.button{
+    padding:10px 30px;
+    outline:none;
+    border: none;
+    border-radius: 8px;
+    color:white;
+    background-color: var(--color);
+    width: 100%;
+}
+h1{
+    padding-bottom: 20px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.inputs > *{
+    padding: 5px 0;
+    text-wrap: nowrap;
+}
+.inputs{
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 1px var(--color);
+}
+
+@media screen and (max-width:1000px){
+    .inputs{
+        background-color: unset;
+        border: none;
+        box-shadow: none;
+    }
+}
