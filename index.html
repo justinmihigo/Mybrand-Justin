@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
+    <script src="./js/index.js" defer></script>
     <header>
         <nav>
             <div id="logo">
                 <img src="./resources/justin-full.svg" width="150" height="auto" alt="mylogo"/>
             </div>
             <div class="hidden">
-                <i class="fa-solid fa-bars"></i>
+                <i id="bars" class="fa-solid fa-bars"></i>
+                <i id="close" style="display: none;" class="fa-solid fa-close"></i>
             </div>
             <div id="navlinks">
                 <ul>
@@ -26,7 +28,7 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#blogs">Blogs</a></li>
                     <li><a href="#contactme">Contact me</a></li>
-                    <li><a href="#login">Login</a></li>
+                    <li><a href="./html-pages/adminLogin.html">Login</a></li>
                 </ul>
             </div>
             <div id="download">
@@ -34,6 +36,9 @@
             </div>
         </nav>
     </header>
+    <aside id="aside" class="hidden">
+        
+    </aside>
     <section class="section-styles" id="home">
         <div class="intro">
             <h3>Hi I am,</h3>
@@ -215,28 +220,52 @@
                 <p class="center"><b>Why React.Js</b></p>
                 <p class="desc"> React is a javascript library, created by...
                 </p>
-                <button class="special">Read me</button>
+                <div class="reactions">
+                    <button class="special"><a href="./html-pages/singleBlog.html">Read more</a></button>
+                    <div class="reaction-btn">
+                       <span>134 &nbsp;<i class="fa-solid fa-thumbs-up"></i></span> &nbsp;
+                       <span>140 &nbsp;<i class="fa-solid fa-comment"></i></span>
+                    </div>
+                </div>
             </article>
             <article class="blog">
                 <img src="./resources/image2.png" width="200" height="auto" alt="react js">
                 <p class="center"><b>Collaboration</b></p>
                 <p class="desc"> Collaboration is the one of the best thing that...
                 </p>
-                <button class="special">Read me</button>
+                <div class="reactions">
+                    <button class="special">Read more</button>
+                    <div class="reaction-btn">
+                       <span>823 &nbsp;<i class="fa-solid fa-thumbs-up"></i></span> &nbsp;
+                       <span>237 &nbsp;<i class="fa-solid fa-comment"></i></span>
+                    </div>
+                </div>
             </article>
             <article class="blog">
                 <img src="./resources/image3.png" width="200" height="auto" alt="react js">
                 <p class="center"><b>10 languages</b></p>
                 <p class="desc"> In this 2024, there are too many programming....
                 </p>
-                <button class="special">Read me</button>
+                <div class="reactions">
+                    <button class="special">Read more</button>
+                    <div class="reaction-btn">
+                       <span>394&nbsp;<i class="fa-solid fa-thumbs-up"></i></span> &nbsp;
+                       <span>129 &nbsp;<i class="fa-solid fa-comment"></i></span>
+                    </div>
+                </div>
             </article>
             <article class="blog">
                 <img src="./resources/image4.png" width="200" height="auto" alt="react js">
                 <p class="center"><b>REST APIs</b></p>
                 <p class="desc"> REST API stands for Represantational state....
                 </p>
-                <button class="special">Read me</button>
+                <div class="reactions">
+                    <button class="special">Read more</button>
+                    <div class="reaction-btn">
+                       <span>541 &nbsp;<i class="fa-solid fa-thumbs-up"></i></span> &nbsp;
+                       <span>273 &nbsp;<i class="fa-solid fa-comment"></i></span>
+                    </div>
+                </div>
             </article>
         </div>
     </section>

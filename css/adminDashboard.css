@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+:root{
+    --color:#FD6F00;
+    --article-bg:rgba(234, 228, 239, 0.7);
+    --bg:#D9D9D9;
+    --blue:#2A1C62;
+    --green:#1EC22E;
+}
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin:0;
+    padding:0;
+    font-family:poppins;
+}
+
+body>:not(section.main, header){
+    width:90%;
+    margin:auto;
+}
+a{
+   text-decoration: none; 
+}
+#navlinks ul a{
+    color: black;
+}
+header{
+    position: sticky;
+    padding:-20px 0;
+    width: 100%;
+    top:0;
+    background-color: white;
+}
+#navlinks  ul a:active{
+    color:var(--color);
+}
+
+ul{
+    list-style-type: none;
+}
+#navlinks ul{
+    display: flex;
+    gap:20px;
+}
+nav{
+    width: 90%;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:30px 0;
+  }
+  #tilt{
+    transform: rotate(20deg);
+  }
+  .status span > i{
+    color:var(--color);
+    font-size:large;
+  }
+  .status{
+    display: flex;
+    gap: 5px;
+}
+  input{
+    width:25%;
+    padding: 5px;
+    outline: none;
+    border: 1.5px solid var(--color);
+    border-radius: 10px;
+    background-image: url(../resources/magnifying-glass-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 14px;
+    background-position-y: center;
+    background-position-x: 10px;
+}
+input::placeholder{
+    padding-left: 30px;
+}
+i{
+    font-size: 20px;
+}
+.number{
+    font-size:10px;
+    background-color: var(--blue);
+    color: white;
+    border-radius:50%;
+    padding:5px;
+    position: relative;
+    top: -20px;
+    right: 20px;
+}
+/* Aside start nav bar end */
+.aside{
+    top:50px;
+    position:sticky;
+    width: 15%;
+    color:white;
+    height: 90vh;
+    background-color: var(--blue);
+    padding: 20px 50px;
+}
+.aside .link i{
+    font-size: 30px;
+}
+.profile{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.profile i:nth-child(1), .card i{
+    font-size:40px;
+    color:var(--color);
+}
+.green{
+    color:var(--green);
+}
+.link{
+    display: flex;
+    gap: 30px;
+}
+.link:hover{
+    width: unset;
+    background-color: var(--color);
+    padding: 20px 0;
+}
+.aside{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+/* Aside end main dashboard start */
+.main{
+    display: flex;
+    gap: 20px;
+}
+.dashboard{
+    width: 70%;
+}
+.card{
+    color:white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--blue);
+    width:fit-content;
+    padding: 20px;
+    border-radius: 10px;
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+    margin:20px 0;
+}
+.monthly{
+    color:white;
+    background-color: var(--blue);
+    width:fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    width:27%;
+}
+.monthly img{
+    width:100%;
+}
+
+.clicks{
+    color:white;
+    background-color: var(--blue);
+    width:fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    width:27%;
+}
+.flex{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.red{
+    color:tomato;
+}
+
+.projects{
+    width:65%;
+    background-color: var(--bg);
+    padding:10px;
+    border-radius:10px;
+}
+.project-section{
+    display: flex;
+    justify-content: space-between;
+    padding:30px;
+}
+.rectangle{
+    height:8px;
+    background-color:var(--green);
+    border-radius: 10px;
+    width:60%;
+}
+.bar{
+    padding:20px;
+    width:40%;
+}
+.padding{
+    padding: 10px 0;
+}
+.width{
+    width:10%;
+}
+.up{
+    position: relative;
+    top:-30px;
+    left:60%;
+}
+
+.recent-messages{
+    width:25%;
+    background-color: var(--bg);
+    padding:20px;
+    border-radius:10px;
+}
+.justify{
+    text-align: justify;
+    padding:10px 0;
+}
+.grey{
+    font-size: small;
+}
+.messages{
+    display: flex;
+    justify-content: space-between;
+}
