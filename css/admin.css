@@ -47,13 +47,16 @@ input,textarea{
     outline: none;
     border: 1.5px solid var(--color);
     border-radius: 10px;
-    width: 300px;
+    width: 100%;
 }
 label,input{
     display: block;
 }
 label{
     padding: 5px 0;
+}
+form{
+    width:100%;    
 }
 
 .button{
@@ -94,5 +97,14 @@ h1{
         background-color: unset;
         border: none;
         box-shadow: none;
+    }
+    form{
+        width: 100%;
+    }
+    input, textarea{
+        width:100%;
+    }
+    .container{
+        width: 100%;
     }
 }

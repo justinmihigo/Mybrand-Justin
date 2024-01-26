@@ -32,6 +32,8 @@ header{
     width: 100%;
     top:0;
     background-color: white;
+    box-shadow: 0px 1px 2px 0px var(--blue);
+    margin-bottom: 10px;
 }
 #navlinks  ul a:active{
     color:var(--color);
@@ -93,7 +95,7 @@ i{
 }
 
 .aside{
-    top:50px;
+    top:100px;
     position:sticky;
     width: 15%;
     color:white;
@@ -130,4 +132,7 @@ i{
     display: flex;
     flex-direction: column;
     gap:40px;
+}
+.button a{
+    color:white;
 }

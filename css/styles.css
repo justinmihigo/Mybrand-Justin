@@ -338,6 +338,9 @@ textarea{
 select{
     padding:10px 10px 10px 10px;
 }
+#links{
+    display: none;
+}
 .check{
     display: inline;
     width:unset;
@@ -430,6 +433,12 @@ input[type="checkbox"]{
     .blog,.box, .article{
         width:90%;
         height:fit-content;
+    }
+    #links{
+        display: block;
+    }
+    .links ul{
+        display: none;
     }
 }
 @media screen and (max-width:800px) {
