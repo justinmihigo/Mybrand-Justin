@@ -23,6 +23,7 @@ body>:not(section.main, header){
 a{
    text-decoration: none; 
 }
+
 #navlinks ul a{
     color: black;
 }
@@ -101,6 +102,7 @@ i{
     background-color: var(--blue);
     padding: 20px 50px;
 }
+
 .aside .link i{
     font-size: 30px;
 }
@@ -121,10 +123,13 @@ i{
     display: flex;
     gap: 30px;
 }
+.link a{
+    color: white;
+}
 .link:hover{
-    width: unset;
+    width: 100%;
     background-color: var(--color);
-    padding: 20px 0;
+    padding: 20px;
 }
 .aside{
     display: flex;
@@ -148,9 +153,11 @@ i{
     width:fit-content;
     padding: 20px;
     border-radius: 10px;
+    margin: 10px 0;
 }
 .cards{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin:20px 0;
 }
@@ -186,6 +193,7 @@ i{
 
 .projects{
     width:65%;
+    height:fit-content;
     background-color: var(--bg);
     padding:10px;
     border-radius:10px;
@@ -233,4 +241,71 @@ i{
 .messages{
     display: flex;
     justify-content: space-between;
+}
+@media screen and (max-width:1000px){
+    .messages{
+        flex-direction: column;
+    }
+    .projects, .recent-messages{
+        width: 95%;
+        margin: 10px;
+    }
+
+}
+@media screen and (max-width:930px){
+    .monthly, .clicks{
+        width: 40%;
+        margin:20px 0;
+    }
+}
+@media screen and (max-width:890px){
+    .aside .profile span, .link span{
+        display: none;
+    }
+    .aside{
+        width: fit-content;
+    }
+}
+@media screen and (max-width:860px){
+    .card{
+        width:40%;
+    }
+}
+@media screen and (max-width: 801px) {
+    .status span {
+        display: none;
+    }
+    .status span:last-child{
+        display:block
+    }
+    nav a{
+        display: none;
+    }
+    .cards{
+        justify-content: space-evenly;
+    }
+    .project-section{
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width:600px){
+    .aside{
+        display: none;
+    }
+    .card{
+        width: 100%;
+    }
+    .dashboard{
+        width: 95%;
+    }
+
+    
+}
+@media screen and (max-width:450px) {
+    nav input{
+        display: none;
+    }
+    .monthly, .clicks{
+        width: 95%;
+    }
 }

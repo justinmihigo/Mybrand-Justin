@@ -347,6 +347,9 @@ select{
 input[type="checkbox"]{
     vertical-align: middle;
 }
+.blog img{
+    object-fit: cover;
+}
 .centered{
     padding: 20px 0;
     display: flex;
@@ -412,8 +415,8 @@ input[type="checkbox"]{
     .hidden{
         display:block;
     }
-
 }
+
 @media screen  and (max-width:450px){
     #navlinks ul li{
         display:none;
@@ -424,7 +427,7 @@ input[type="checkbox"]{
     #download{
         display: none;
     }
-    .blog,.box{
+    .blog,.box, .article{
         width:90%;
         height:fit-content;
     }
@@ -480,7 +483,10 @@ input[type="checkbox"]{
         align-items: center;
     }
     .blog, .article{
-        width:60%;
+        width:80%;
+    }
+    .blog img{
+        object-fit: cover;
     }
     .skills{
        gap: 20px;

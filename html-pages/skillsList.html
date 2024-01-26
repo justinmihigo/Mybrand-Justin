@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Justin Mihigo">
+    <title>Justin Mihigo</title>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/articleList.css">
+    <link rel="shortcut icon" href="../resources/logo.svg" type="image/svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <img src="../resources/justin-full.svg" width="150" height="auto" alt="mylogo" />
+            </div>
+            <i class="fa-solid fa-bars" id="bars"></i>
+            <input type="text" id="search" placeholder="Search">
+            <a href="../index.html">Back to home</a>
+            </div>
+            <div class="status">
+                <span>
+                    <i class="fa-solid fa-bell" id="tilt"></i>
+                    <i class="fa-solid fa-caret-down"></i>&nbsp;
+                    <span class="number">4+</span>
+                </span>
+                <span>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-caret-down"></i>&nbsp;
+                    <span class="number">4+</span>
+                </span>
+                <span>
+                    <i class="fa-regular fa-circle-user"></i>
+                    <i class="fa-solid fa-caret-down"></i>
+                </span>
+            </div>
+        </nav>
+    </header>
+    <section class="main" id="main">
+        <div class="aside">
+            <div class="profile">
+                <i class="fa-regular fa-circle-user"></i><span class="green">Justin Mihigo<br>
+                    online <i class="fa-solid fa-caret-down"></i><span>
+            </div>
+            <div class="link">
+                <a href="#">  <i class="fa-solid fa-house"></i> <span><b>Dashboard</b></span></a>
+              </div>
+              <div class="link">
+               <a href="./articleList.html">   <i class="fa-solid fa-newspaper"></i> <span><b>Articles</b></span></a>
+              </div>
+              <div class="link">
+                 <a href="#reports"> <i class="fa-solid fa-chart-simple"></i> <span><b>Reports</b></span></a>
+              </div>
+              <div class="link">
+                  <a href="./queries.html"><i class="fa-solid fa-clock-rotate-left"></i> <span><b>Queries</b></span></a>
+              </div>
+              <div class="link">
+                  <a href="./skillsList.html"><i class="fa-solid fa-brain"></i></i> <span><b>Skills</b></span></a>
+              </div>
+        </div>
+        <div class="middle">
+            <div class="filter">
+                <div class="cont">
+                <p><b><label for="filter">Filter: 
+                    <select type="text" id="filter" name="filter">
+                        <option value="">Select an item</option>
+                    </select>
+                </b></p>
+                </div>
+                <button class="button"><a href="./skillsCreate.html">Add a skill</a></button>
+            </div>
+            <div class="listing">
+                <div><span><b>Number</b></span></div>
+                <div><span><b>Skill title</b></span></div>
+                <div><span><b>Publishing time</b></span></div>
+                <div><span><b>Details</b></span></div>
+                <div><span><b>Action</b></span></div>
+                <!--1st row-->
+                <div><b>1</b></div>
+                <p>Data analytics</p>
+                <p>19 Jan, 2023 8:00</p>
+                <p>Azubi certified business analytics...</p>
+                <p>
+                    <span class="blue">View</span>&nbsp;
+                    <span class="green">Edit</span>&nbsp;
+                    <span class="red">Delete</span>
+                </p>
+                <!--2nd row-->
+                <div><b>2</b></div>
+                <p>Cloud solutions</p>
+                <p>19 Jan, 2023 8:00</p>
+                <p>Cloud developer certified by utiva....</p>
+                <p>
+                    <span class="blue">View</span>&nbsp;
+                    <span class="green">Edit</span>&nbsp;
+                    <span class="red">Delete</span>
+                </p>
+                <!--3nd row-->
+                <div><b>3</b></div>
+                <p>Graphic Designer</p>
+                <p>19 Jan, 2023 8:00</p>
+                <p>React.js is Javascript library that was created by facebook</p>
+                <p>
+                    <span class="blue">View</span>&nbsp;
+                    <span class="green">Edit</span>&nbsp;
+                    <span class="red">Delete</span>
+                </p>
+                <!--4nd row-->
+                <div><b>4</b></div>
+                <p>UI&UX</p>
+                <p>19 Jan, 2023 8:00</p>
+                <p>React.js is Javascript library that was created by facebook</p>
+                <p>
+                    <span class="blue">View</span>&nbsp;
+                    <span class="green">Edit</span>&nbsp;
+                    <span class="red">Delete</span>
+                </p>
+            </div>
+        </div>
+        </section>
+        </body>
+        </html>
