@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="../css/articleList.css">
     <link rel="shortcut icon" href="../resources/logo.svg" type="image/svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link href="../node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.1.4/css/froala_editor.min.css"/>
 </head>
 
 <body>
-    <script type="text/javascript" src="../node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
+    <script src="../js/createval.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.1.4/js/froala_editor.min.js"></script>
     <header>
         <nav>
             <div id="logo">
@@ -69,25 +70,22 @@
                 <h2 class="center">Create an Article</h2>
                 <form>
                     <label for="title"><p><b>Title</b></p></label>
-                    <input type="text" id="title" >
+                    <input type="text" name="title" id="title" onkeyup="validate('title',0)" required>
+                    <div class="validate">    
+                    </div>
+                    <label for="image"><p><b>Image</b></p></label>
+                    <input type="file" name="image" id="image" onkeyup="validate('image',1)" required>
+                    <div class="validate">    
+                    </div>
                     <label for="body"><p><b>Body</b></p></label><br>
-                        <!-- <div class="editors">
-                            <i class="fa-solid fa-bold"></i>
-                            <i class="fa-solid fa-align-left"></i>
-                            <i class="fa-solid fa-align-right"></i>
-                            <i class="fa-solid fa-align-justify"></i>
-                            <i class="fa-solid fa-underline"></i>
-                            <i class="fa-solid fa-image"></i>
-                            <i class="fa-solid fa-paperclip"></i>
-                            <i class="fa-solid fa-link"></i>
-                        </div> -->
-                        <textarea rows="10" cols="30" id="editors"></textarea>
-                        <!-- <div class="end"><p>0 characters</p></div> -->
+                        <textarea rows="10" name="content" cols="30" id="editors" onkeyup="validate('editors',1)" required ></textarea>
+                        <div class="validate">    
+                        </div>
                         <script>
                             var editor = new FroalaEditor('#editors');
                         </script>
                         <br>
-                    <button class="button">Create</button>
+                    <input type="submit" id="submit" value="Create" class="button">
                 </form>
             </div>
 

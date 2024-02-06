@@ -5,10 +5,17 @@
     --article-bg:rgba(234, 228, 239, 0.7);
 }
 aside{
-    background-color: white;
-    width:300px;
-    position: fixed;
+    background-color: var(--color);
+    width:350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 100px;
+}
+aside ul a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
 }
 .hide{
     display: none;
@@ -22,7 +29,7 @@ html{
     font-family:poppins;
 }
 
-body{
+body >:not(#header){
     width:90%;
     margin:auto;
 }
@@ -70,12 +77,20 @@ ul{
     from, to { border-color: transparent }
     50% { border-color: orange; }
   }
-
+.body:not(.article, .blog){
+    background-color: black;
+    color: white;
+}
+.a{
+    color:white;
+}
 nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding:30px 0;
+  width:90%;
+  margin: auto;
 }
 .button, .feedback-btn{
     padding:10px 20px;
@@ -146,6 +161,8 @@ h1{
     padding:30px 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
     align-items: center;
 }
 .desc{
@@ -215,9 +232,12 @@ h1{
 .fontsize{
     font-size: smaller;
 }
+.holder{
+    width:10%;
+    height: 10vh;
+}
 .holder img{
-    width:100px;
-    height:100px;
+    width: 100%;
     border-radius:50%;
     border:3px solid var(--color);
     object-fit: cover;
@@ -226,7 +246,14 @@ h1{
     width: 70%;
     text-align: justify;
 }
+.testimony-list{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+    overflow:hidden;
+}
 .testimony{
+    flex: 0 0 60%;
     border-radius:10px;
     padding:20px;
     width:60%;
@@ -235,11 +262,12 @@ h1{
     justify-content: space-around;
     align-items: center;
 }
-.testimony-list{
+
+/* .testimony-list{
     padding: 40px 0;
     display: flex;
     justify-content: space-around;
-}
+}  */
 .slider{
     height: 10px;
     width:35px;
@@ -253,6 +281,8 @@ h1{
     display: flex;
     justify-content: center;
     gap: 10px;
+    padding-top:20px;
+    margin-top:20px;
 }
 .feedback-btn{
     display: flex;
@@ -329,6 +359,17 @@ label, input[type="text"], select, textarea{
     column-gap: 100px;
     row-gap: 10px;
 }
+.error,.success{
+    position: relative;
+    top: -35px;
+    left: 100%;
+}
+.red,.error{
+    color:red;
+}
+.success{
+    color: green;
+}
 textarea::placeholder{
     padding:10px;
 }
@@ -365,8 +406,16 @@ input[type="checkbox"]{
 .hidden{
     display: none;
 }
+#bars, #close{
+    font-size: largers;
+}
 .box img{
     width: 100%;
+}
+#aside ul{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
 }
 @media screen  and (max-width:1002px) {
     #navlinks ul li:nth-child(even){
@@ -517,6 +566,8 @@ input[type="checkbox"]{
     }
     .hidden{
         display: block;
+        position: absolute;
+        right:0;
     }
     .reactions{
         flex-direction: column;
