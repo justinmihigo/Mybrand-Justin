@@ -1,0 +1,189 @@
+:root{
+    --color:#FD6F00;
+    --article-bg:rgba(234, 228, 239, 0.7);
+    --bg:#D9D9D9;
+    --blue:#2A1C62;
+    --green:#1EC22E;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+.middle{
+    width:70%;
+}
+#filter {
+    width: 60%;
+    margin-left:10px;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid var(--color);
+}
+.button{
+    padding:10px 20px;
+    outline:none;
+    border: none;
+    border-radius: 8px;
+    color:white;
+    background-color: var(--color);
+}
+.filter{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cont{
+    width:50%;
+}
+.listing{
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: 0.25fr 0.5fr 0.5fr 1.2fr 1fr;
+    row-gap: 10px;
+    column-gap: 20px;
+    align-items: center;
+    font-size: small;
+}
+.listing span{
+    cursor:pointer;
+}
+.listing > *{
+    padding: 10px 0;
+}
+.red{
+    color:tomato;
+}
+.green{
+    color:var(--green);
+}
+.blue{
+    color:var(--blue);
+}
+/* creating the blogs */
+textarea, input{
+    width:100%;
+}
+.center{
+    text-align: center;
+}
+input,select,textarea{
+    padding: 10px;
+    outline: none;
+    border: 1.5px solid var(--color);
+    border-radius: 10px;
+}
+.create{
+    width:60%;
+}
+input[type='file']{
+    display: none;
+}
+#image{
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: none;
+}
+#editors{
+    border: 1.5px solid var(--color);
+}
+label, input, textarea{
+    margin:20px 0;
+}
+.create > *{
+    padding: 20px 0;
+}
+.mid{
+    width:70%;
+    display: flex;
+    justify-content: center;
+}
+.editors{
+    padding: 20px 0;
+    display: flex;
+    gap: 20px;
+
+}
+.end{
+    display: flex;
+    font-size: small;
+    justify-content: flex-end;
+}
+.link a{
+    color: white;
+}
+.link:hover{
+    width: 100%;
+    background-color: var(--color);
+    padding: 20px;
+}
+.error,.success{
+    position: relative;
+    top: -35px;
+    left: 100%;
+}
+.red,.error{
+    color:red;
+}
+.success{
+    color: green;
+}
+@media screen and (max-width:890px){
+    .aside .profile span, .link span{
+        display: none;
+    }
+    .aside{
+        width: fit-content;
+    }
+}
+@media screen and (max-width:860px){
+    .card{
+        width:40%;
+    }
+}
+@media screen and (max-width: 801px) {
+    .status span {
+        display: none;
+    }
+    .status span:last-child{
+        display:block
+    }
+    nav a{
+        display: none;
+    }
+    .cards{
+        justify-content: space-evenly;
+    }
+    .project-section{
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width:600px){
+    .aside{
+        display: none;
+    }
+    .card{
+        width: 100%;
+    }
+    .dashboard, .mid,.create,.middle,.listing{
+        width: 95%;
+    }
+    .editors, .filter{
+        flex-wrap: wrap;
+    }
+    .listing{
+        grid-template-columns: repeat(auto-fill, 200px);
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+@media screen and (max-width:450px) {
+    nav input{
+        display: none;
+    }
+    .monthly, .clicks,.listing{
+        width: 95%;
+    }
+}
