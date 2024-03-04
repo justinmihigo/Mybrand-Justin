@@ -6,6 +6,20 @@
     --bg:#D9D9D9;
     --blue:#2A1C62;
 }
+.alert,.error{
+    color:tomato;
+    font-size: small;
+}
+
+.error,.success{
+    position: relative;
+    left: 25%;
+    top:-30px;
+}
+.success{
+    color: green;
+    left: 70%;
+}
 html{
     scroll-behavior: smooth;
 }

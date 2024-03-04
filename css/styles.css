@@ -5,11 +5,11 @@
     --article-bg:rgba(234, 228, 239, 0.7);
 }
 aside{
-    background-color: white;
     width:300px;
     position: fixed;
     top: 100px;
 }
+
 .hide{
     display: none;
 }
@@ -21,7 +21,20 @@ html{
     padding:0;
     font-family:poppins;
 }
+.alert,.error{
+    color:tomato;
+    font-size: small;
+}
 
+.error,.success{
+    position: relative;
+    left: 55%;
+    top:-30px;
+}
+.success{
+    color: green;
+    left: 100%;
+}
 body{
     width:90%;
     margin:auto;
@@ -362,6 +375,16 @@ input[type="checkbox"]{
     display: flex;
     gap:20px;
 }
+aside{
+    width: 100%;
+    background-color: var(--color);
+    gap: 20px;
+}
+
+aside a{
+    margin: 30px;
+    color: white;
+}
 .hidden{
     display: none;
 }
@@ -410,6 +433,7 @@ input[type="checkbox"]{
         width: 30%;
         margin-top: 20px;
     }
+    
 }
 @media screen  and (max-width:645px){
     #navlinks ul li{
@@ -517,6 +541,12 @@ input[type="checkbox"]{
     }
     .hidden{
         display: block;
+    }
+    .right{
+        position: absolute;
+        right: 0;
+        top: 5;
+        font-size: larger;
     }
     .reactions{
         flex-direction: column;
