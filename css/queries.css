@@ -1,0 +1,58 @@
+.recent-messages{
+    width:80%;
+}
+.rating{
+    margin: 0 10px;
+}
+.rating i{
+    font-size: small;
+}
+.rating i:last-child{
+    color:white;
+}
+.padding{
+    padding:20px 0;
+    margin:20px 0;
+}
+.grey{
+    color: #464646;
+    font-size: small;
+}
+.justify{
+    text-align: justify;
+}
+.reply{
+    width: 80%;
+}
+textarea{
+    padding: 10px;
+    width: 70%;
+    outline: none;
+    border: 1.5px solid var(--color);
+    border-radius: 10px;
+}
+textarea{
+    width: 100%;
+}
+textarea{
+    margin-bottom: 10px;
+}
+.button{
+    padding:10px 20px;
+    outline:none;
+    border: none;
+    border-radius: 8px;
+    color:white;
+    background-color: var(--color);
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.queries{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
