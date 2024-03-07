@@ -70,14 +70,38 @@ async function addlike(){
     method: 'POST',
     });
   const blog=await response.json();
-  const likesCountElement = document.getElementById('likes');
+  const likesCountElement = document.getElementById('likes')!;
+  let count =0;
+  if (likesCountElement) {
+    likesCountElement.textContent = blog.blog.likes.toString();
+    count++;
+    localStorage.setItem('count', `${count}`);
+  }
+}
+async function deleteLike(){
+    const url=new URLSearchParams(window.location.search);
+  const blogId=url.get('id');
+  const response=await fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${blogId}/likes`, {
+    method: 'DELETE',
+    });
+  const blog=await response.json();
+  const likesCountElement = document.getElementById('likes')!;
   if (likesCountElement) {
     likesCountElement.textContent = blog.blog.likes.toString();
   }
 }
 let likebtn=document.getElementById('addLike');
 likebtn?.addEventListener('click',()=>{
-    addlike();
+    let getcount=localStorage.getItem('count') as any;
+    if(getcount=='1'){
+        deleteLike();
+        localStorage.setItem('count','0');
+    }
+    else{
+      addlike();
+    }
+    
+
 });
 
 async function addcomment(){
