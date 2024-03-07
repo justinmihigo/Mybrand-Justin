@@ -82,6 +82,23 @@ function addlike() {
         });
         const blog = yield response.json();
         const likesCountElement = document.getElementById('likes');
+        let count = 0;
+        if (likesCountElement) {
+            likesCountElement.textContent = blog.blog.likes.toString();
+            count++;
+            localStorage.setItem('count', `${count}`);
+        }
+    });
+}
+function deleteLike() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const url = new URLSearchParams(window.location.search);
+        const blogId = url.get('id');
+        const response = yield fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${blogId}/likes`, {
+            method: 'DELETE',
+        });
+        const blog = yield response.json();
+        const likesCountElement = document.getElementById('likes');
         if (likesCountElement) {
             likesCountElement.textContent = blog.blog.likes.toString();
         }
@@ -89,7 +106,14 @@ function addlike() {
 }
 let likebtn = document.getElementById('addLike');
 likebtn === null || likebtn === void 0 ? void 0 : likebtn.addEventListener('click', () => {
-    addlike();
+    let getcount = localStorage.getItem('count');
+    if (getcount == '1') {
+        deleteLike();
+        localStorage.setItem('count', '0');
+    }
+    else {
+        addlike();
+    }
 });
 function addcomment() {
     return __awaiter(this, void 0, void 0, function* () {
