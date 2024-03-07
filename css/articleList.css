@@ -39,7 +39,7 @@
 .listing{
     padding: 30px 0;
     display: grid;
-    grid-template-columns: 0.25fr 0.5fr 0.5fr 1.2fr 1fr;
+    grid-template-columns: repeat(5,0.5fr);
     row-gap: 10px;
     column-gap: 20px;
     align-items: center;
@@ -102,6 +102,39 @@ label, input, textarea{
     width: 100%;
     background-color: var(--color);
     padding: 20px;
+}
+.popup{
+    position: fixed;
+    top: 0;
+    left:40%;
+    z-index: 100;
+    color:var(--green);
+    animation: popup-show 0.5s ease-in-out forwards;
+}
+.hide{
+    display: none;
+}
+.popup div{
+    width: fit-content;
+    background-color: var(--article-bg);
+    padding:20px 30px;
+    border-radius:10px;
+}
+
+#close-pop{
+    position: relative;
+    left: 99%;
+    color: red;
+}
+@keyframes popup-show {
+    from {
+        opacity: 0;
+        transform: scale(0.9); /* Scale up slightly to create a pop-in effect */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 @media screen and (max-width:890px){
     .aside .profile span, .link span{

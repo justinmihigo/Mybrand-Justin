@@ -13,7 +13,7 @@
 
 <body>
     <script src="../public/dashboard.js" defer>
-
+        console.log("dashboard");
     </script>
     <header>
         <nav>
@@ -71,28 +71,28 @@
                 <div class="card">
                     <i class="fa-solid fa-blog"></i>
                     <div class="desc">
-                        <h2>45</h2>
+                        <h2 id="blogsNumber">-</h2>
                         <p>Blogs</p>
                     </div>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-thumbs-up"></i>
                     <div class="desc">
-                        <h2>2,234</h2>
+                        <h2 id="likesNumber">-</h2>
                         <p>Likes</p>
                     </div>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-comments"></i>
                     <div class="desc">
-                        <h2>1,284</h2>
+                        <h2 id="commentsNumber">-</h2>
                         <p>Comments</p>
                     </div>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-clipboard-question"></i>
                     <div class="desc">
-                        <h2>200</h2>
+                        <h2 id="queriesNumber">-</h2>
                         <p>Queries</p>
                     </div>
                 </div>
@@ -125,10 +125,10 @@
                     <h3>Monthly clicks</h3>
                     <div class="flex">
                     <img src="../resources/line1.svg">
-                    <h2>5,000</h2>
+                    <h2>-</h2>
                     </div>
                     <div class="flex">
-                        <span>Total: 22,345</span>
+                        <span>Total: -</span>
                         <span class="green"><i class="fa-solid fa-arrow-up"></i> 11%</span>
                     </div>
                 </div>
@@ -136,10 +136,10 @@
                     <h3>Monthly subscribers </h3>
                     <div class="flex">
                     <img src="../resources/line1.svg">
-                    <h2>5,000</h2>
+                    <h2>-</h2>
                     </div>
                     <div class="flex">
-                        <span>Total: 22,25</span>
+                        <span>Total: -</span>
                         <span class="red"><i class="fa-solid fa-arrow-down"></i> 0.5%</span>
                     </div>
                 </div>
@@ -147,10 +147,10 @@
                     <h3>Monthly impressions</h3>
                     <div class="flex">
                     <img src="../resources/line3.svg">
-                    <h2>600</h2>
+                    <h2>-</h2>
                     </div>
                     <div class="flex">
-                        <span>Total: 22,200</span>
+                        <span>Total: -</span>
                         <span class="green"><i class="fa-solid fa-arrow-up"></i> 0.3%</span>
                     </div>
                 </div>
@@ -210,9 +210,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="recent-messages">
+                <div class="recent-messages" id="recents">
                     <h3 class="blue center">Recent Comments</h3>
-                    <div class="message padding">
+                    <!-- <div class="message padding">
                         <p><b>Mukunzi Yvan</b> &nbsp; &nbsp;<span class="grey">58 min ago</span></p>
                         <p class="justify">
                             Hey Justin, I wanted to tell you that after thoroughly, 
@@ -239,7 +239,7 @@
                             Hey Justin, I wanted to tell you that after thoroughly, 
                             going through your projects, I want to talk to you.
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </div>

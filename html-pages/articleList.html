@@ -47,80 +47,108 @@
                     online <i class="fa-solid fa-caret-down"></i><span>
             </div>
             <div class="link">
-                <a href="#">  <i class="fa-solid fa-house"></i> <span><b>Dashboard</b></span></a>
-              </div>
-              <div class="link">
-               <a href="./articleList.html">   <i class="fa-solid fa-newspaper"></i> <span><b>Articles</b></span></a>
-              </div>
-              <div class="link">
-                 <a href="#reports"> <i class="fa-solid fa-chart-simple"></i> <span><b>Reports</b></span></a>
-              </div>
-              <div class="link">
-                  <a href="./queries.html"><i class="fa-solid fa-clock-rotate-left"></i> <span><b>Queries</b></span></a>
-              </div>
-              <div class="link">
-                  <a href="./skillsList.html"><i class="fa-solid fa-brain"></i></i> <span><b>Skills</b></span></a>
-              </div>
+                <a href="#"> <i class="fa-solid fa-house"></i> <span><b>Dashboard</b></span></a>
+            </div>
+            <div class="link">
+                <a href="./articleList.html"> <i class="fa-solid fa-newspaper"></i> <span><b>Articles</b></span></a>
+            </div>
+            <div class="link">
+                <a href="#reports"> <i class="fa-solid fa-chart-simple"></i> <span><b>Reports</b></span></a>
+            </div>
+            <div class="link">
+                <a href="./queries.html"><i class="fa-solid fa-clock-rotate-left"></i> <span><b>Queries</b></span></a>
+            </div>
+            <div class="link">
+                <a href="./skillsList.html"><i class="fa-solid fa-brain"></i></i> <span><b>Skills</b></span></a>
+            </div>
         </div>
         <div class="middle">
             <div class="filter">
                 <div class="cont">
-                <p><b><label for="filter">Filter: 
-                    <select type="text" id="filter" name="filter">
-                        <option value="">Select an item</option>
-                    </select>
-                </b></p>
+                    <p><b><label for="filter">Filter:
+                                <select type="text" id="filter" name="filter">
+                                    <option value="">Select an item</option>
+                                </select>
+                        </b></p>
                 </div>
                 <button class="button"><a href="./articleCreate.html">Create an article</a></button>
             </div>
-            <div class="listing">
-                <div><span><b>Number</b></span></div>
-                <div><span><b>Article title</b></span></div>
-                <div><span><b>Publishing time</b></span></div>
-                <div><span><b>Details</b></span></div>
-                <div><span><b>Action</b></span></div>
-                <!--1st row-->
-                <div><b>1</b></div>
-                <p>Why React.Js</p>
-                <p>19 Jan, 2023 8:00</p>
-                <p>React.js is Javascript library that was created by facebook</p>
-                <p>
-                    <span class="blue">Read</span>&nbsp;
-                    <span class="green">Edit</span>&nbsp;
-                    <span class="red">Delete</span>
-                </p>
-                <!--2nd row-->
-                <div><b>2</b></div>
-                <p>Collaboration</p>
-                <p>19 Jan, 2023 8:00</p>
-                <p>React.js is Javascript library that was created by facebook</p>
-                <p>
-                    <span class="blue">Read</span>&nbsp;
-                    <span class="green">Edit</span>&nbsp;
-                    <span class="red">Delete</span>
-                </p>
-                <!--3nd row-->
-                <div><b>3</b></div>
-                <p>10 languages to learn</p>
-                <p>19 Jan, 2023 8:00</p>
-                <p>React.js is Javascript library that was created by facebook</p>
-                <p>
-                    <span class="blue">Read</span>&nbsp;
-                    <span class="green">Edit</span>&nbsp;
-                    <span class="red">Delete</span>
-                </p>
-                <!--4nd row-->
-                <div><b>4</b></div>
-                <p>10 languages to learn</p>
-                <p>19 Jan, 2023 8:00</p>
-                <p>React.js is Javascript library that was created by facebook</p>
-                <p>
-                    <span class="blue">Read</span>&nbsp;
-                    <span class="green">Edit</span>&nbsp;
-                    <span class="red">Delete</span>
-                </p>
+            <div id="container">
+                <div class="listing">
+                    <div><span><b>Number</b></span></div>
+                    <div><span><b>Article title</b></span></div>
+                    <div><span><b>Publishing time</b></span></div>
+                    <div><span><b>Details</b></span></div>
+                    <div><span><b>Action</b></span></div>
+                </div>
+
             </div>
         </div>
-        </section>
-        </body>
-        </html>
+    </section>
+    <script>
+        let container = document.getElementById('container')
+        async function deleteBlog(blogId){
+            try {
+                const response = await fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${blogId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+                const data = await response.json();
+                console.log(data);
+                if (data) {
+                    window.location.href = `./articleList.html`
+                }
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+        async function listBlogs() {
+            try {
+                const response = await fetch('https://mybrand-be-1-mzvx.onrender.com/api/blogs');
+                const data = await response.json();
+                let i = 0;
+                let divEl = document.createElement('div');
+                divEl.classList.add('listing');
+                for (let blog of data) {
+                    let subcontent = blog.content;
+                    subcontent = subcontent.substring(0, 50);
+                    i++;
+                    divEl.innerHTML += `
+                    <p><b>${i}</b></p>
+                <p>${blog.title}</p>
+                <p>19 Jan, 2023 8:00</p>
+                <p>${subcontent}</p>
+                <p>
+                    <span class="blue">Read</span>&nbsp;
+                    <span class="green">Edit</span>&nbsp;
+                    <span class="red">Delete</span>
+                </p>`;
+                    
+                    container.appendChild(divEl);
+                    container.addEventListener('click', e => {
+                        if (e.target.className === 'blue') {
+                            window.location.href = `./singleBlog.html?id=${blog._id}`
+                        }
+                        else if (e.target.className === 'green') {
+                            window.location.href = `./articleCreate.html?id=${blog._id}`
+                        }
+                        else if (e.target.className === 'red') {
+                            deleteBlog(blog._id);
+                        }
+                    });
+                }
+            }
+            catch (error) {
+                console.error(error);
+            }
+
+        }
+        listBlogs();
+    </script>
+</body>
+
+</html>

@@ -30,7 +30,7 @@
     </header>
     
     <section class="main" id="main">
-        <h1 class="color center">Why React.Js</h1>
+        <h1 class="color center" id="title">Why React.Js</h1>
         <div class="descr">
             <div class="icons">
                 <i class="fa-brands fa-facebook"></i>
@@ -42,7 +42,7 @@
                 <img src="../resources/justinpass.png"  alt="photo">
                 <p class="blue">By Justin Mihigo</p>
                 <div class="eclipse"></div>
-                <p class="blue">Updated on January 12, 2024</p>
+                <p class="blue" id="date">Updated on January 12, 2024</p>
                 <div class="eclipse"></div>
                 <p>2 min read</p>
             </div>
@@ -50,7 +50,7 @@
     </section>
     <section class="view padding">
         <section class="aside">
-            <h3 class="blue">Table of contents</h3>
+            <!-- <h3 class="blue">Table of contents</h3>
             <ul>
                 <li><a href="#">A Brief History of React.js</a></li>
                 <li><a href="#">Why Should You USe React?</a></li>
@@ -60,10 +60,10 @@
                 <li><a href="#">React Also Has Broader Community Support</a></li>
                 <li><a href="#">React Has Great Performanc</a></li>
                 <li><a href="#">React is Easy to Test</a></li>
-            </ul>
-            <div class="messages padding">
+            </ul> -->
+            <div class="messages padding" id="recents">
                 <h3 class="blue center">Recent Comments</h3>
-                <div class="message padding">
+                <!-- <div class="message padding">
                     <p><b>Mukunzi Yvan</b> &nbsp; &nbsp;<span class="grey">58 min ago</span></p>
                     <p class="justify">
                         Hey Justin, I wanted to tell you that after thoroughly, 
@@ -90,19 +90,18 @@
                         Hey Justin, I wanted to tell you that after thoroughly, 
                         going through your projects, I want to talk to you.
                     </p>
-                </div>
+                </div> -->
             </div>
         </section>
         <section class="reading">
             <div class="direction">
                 <h4>Home </h4><i class="fa-solid fa-arrow-right"></i>
                 <h4> Blogs</h4> <i class="fa-solid fa-arrow-right"></i>
-                <h4 class="blue">Why React.Js</h4>
+                <h4 class="blue" id="heading">Why React.Js</h4>
             </div>
-            <img src="../resources/react.png" width="80%" height="auto" alt="react" class="padding">
+            <img src="../resources/react.png" id="blogImg" width="80%" height="auto" alt="react" class="padding">
             <article>
-                <h3 class="color">A Brief History of React.js</h3>
-                <p class="padding justify">Facebook created React.js in 2011 for their own use. As you know, Facebook is one 
+                <p class="padding justify" id="content">Facebook created React.js in 2011 for their own use. As you know, Facebook is one 
                     of the biggest Social Networking websites in the world today.
                     In 2012, Instagram also started using it, which is a subsidiary of Facebook.
                     In 2013, Facebook made React.js open-sourced. Initially, the developer community 
@@ -123,36 +122,11 @@
                     Let's explore six key reasons to use React.js.
                 </p>
             </article>
-            <article>
-                <h3 class="color">React is Flexible</h3>
-                <p class="padding justify">
-                    React is remarkably flexible. Once you have learned it, you can use
-                     it on a vast variety of platforms to build quality user interfaces. 
-                     React is a library, NOT a framework. Its library approach has allowed 
-                     React to evolve into such a remarkable tool.
-                    React was created with a single focus: to create components for web applications.
-                    A React component can be anything in your web application like a Button, Text, Label, or Grid.
-                    But as React's popularity is grown, its ecosystem has also grown to cover various use cases.
-                    You can generate a static site with React using tools like Gatsby. You can use React Native
-                     to build mobile apps. You can even create Desktop applications using a tool like Electron, 
-                     which can run on mac and windows with React.js technology.
-                    React also supports server rendering of its components using tools like Next.js. You can also
-                     use React.js to create a virtual reality website and 360 experiences using React VR.
-                    "Learn React Once and Write Everywhere" - Reactjs.org
-                    You can use React in your existing apps too. React was designed keeping this in mind.
-                     You can change a small part of your existing application by using React, and if that 
-                     change works, then you can start converting your whole application into React.js. Facebook 
-                     used the same approach.
-                    "The main advantage of using a Library over a Framework is that Libraries are lightweight, 
-                    and there is a freedom to choose different tools. The Framework consists of an entire ecosystem
-                     to build an application, and you don't have an easy way to use any other tools outside the
-                      Framework."
-                </p>
-            </article>
+           
             <div class="reactions">
-               <span class="color">1,200</span> &nbsp; <i class="fa-solid fa-heart"></i>&nbsp; &nbsp;
-               <span class="color">700</span>&nbsp;  <i class="fa-solid fa-comment"></i>&nbsp; &nbsp;
-               <span class="color">123</span> &nbsp; <i class="fa-solid fa-share"></i>
+               <span class="color" id="likes">1,200</span> &nbsp; <i class="fa-solid fa-heart" id="addLike"></i>&nbsp; &nbsp;
+               <span class="color" id="comments">700</span>&nbsp;  <i class="fa-solid fa-comment"></i>&nbsp; &nbsp;
+               <span class="color" id="shares">123</span> &nbsp; <i class="fa-solid fa-share"></i>
             </div>
             <div>
                 <form class="padding">
@@ -169,7 +143,7 @@
                     </div>
                     <div>
                     <label for="message">Message</label>
-                    <textarea name="message" id="message" class="input" cols="50" rows="5" placeholder="Your message here" onkeyup="check('message',2)"></textarea>
+                    <textarea name="comment" id="comment" class="input" cols="50" rows="5" placeholder="Your message here" onkeyup="check('message',2)"></textarea>
                     <div class="alert"></div>
                         <button class="button">Comment</button>
                         

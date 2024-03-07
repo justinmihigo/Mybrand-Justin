@@ -30,7 +30,6 @@ function getblogs() {
     return __awaiter(this, void 0, void 0, function* () {
         let response = yield fetch('https://mybrand-be-1-mzvx.onrender.com/api/blogs');
         let data = yield response.json();
-        console.log('from the render', data);
         let blogsContainer = document.getElementById('blogs-list');
         console.log(blogsContainer);
         let article = document.createElement('article');
@@ -43,7 +42,7 @@ function getblogs() {
     <p class="desc">${subcontent.substring(0, 50) + '...'}</p>
     </p>
     <div class="reactions">
-        <button class="special"><a href="./html-pages/singleBlog.html">Read more</a></button>
+        <button class="special">Read more</button>
         <div class="reaction-btn">
            <span>${blog.likes} &nbsp;<i class="fa-solid fa-thumbs-up"></i></span> &nbsp;
            <span>${blog.comments.length} &nbsp;<i class="fa-solid fa-comment"></i></span>
@@ -51,6 +50,12 @@ function getblogs() {
     </div>`;
             const articles = article.cloneNode(true);
             blogsContainer.appendChild(articles);
+            articles.addEventListener('click', (e) => {
+                let target = e.target;
+                if (target.classList.contains('special')) {
+                    window.location.href = './html-pages/singleBlog.html?id=' + blog._id;
+                }
+            });
         }
     });
 }
