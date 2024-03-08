@@ -1,7 +1,7 @@
 let logo = document.getElementById("logo");
-function showPopup(message) {
+export function showPopup(message) {
     let popup = document.getElementById('popup');
-    popup.classList.toggle('hide');
+    popup.classList.remove('hide');
     let div = document.createElement('div');
     popup.innerHTML = `
     <div>
@@ -12,9 +12,11 @@ function showPopup(message) {
     popup.addEventListener('click', e => {
         let target = e.target;
         if (target.id === 'close-pop') {
-            popup.style.display = 'none';
+            popup.classList.add('hide');
         }
     });
 }
-export default showPopup;
-// logo?.addEventListener("click", popup);
+// export default showPopup;
+//  logo?.addEventListener("click", ()=>{
+//     showPopup('mihigo');
+//  });

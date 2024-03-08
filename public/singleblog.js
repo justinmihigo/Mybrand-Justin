@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -11,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 let form = document.querySelector('form');
 let inputs = document.querySelectorAll('.input');
 let remarks = document.querySelectorAll('.alert');
+import { showPopup } from "./popup.js";
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     inputs.forEach((input) => {
@@ -43,7 +43,7 @@ function loadSingle() {
         let heading = document.getElementById("heading");
         let recents = document.getElementById("recents");
         let title = document.getElementById("title");
-        let date = document.getElementById("date");
+        let dateEl = document.getElementById("date");
         let image = document.getElementById("blogImg");
         const url = new URLSearchParams(window.location.search);
         const blogId = url.get('id');
@@ -56,17 +56,17 @@ function loadSingle() {
         heading.innerHTML = blog.title;
         title.innerHTML = blog.title;
         image.src = blog.image;
+        dateEl.innerHTML = `Updated on ${(blog.date).substring(0, 10)}`;
         console.log(blog.comments);
         if (blog.comments.length !== 0) {
             for (let comment of blog.comments) {
                 recents.innerHTML += `
         <div class="message padding">
-        <p><b>${comment.name}</b> &nbsp; &nbsp;<span class="grey">58 min ago</span></p>
+        <p><b>${comment.name}</b> &nbsp; &nbsp;<span class="grey">${(comment.date).replace('T', ' ').substring(0, 15)}</span></p>
         <p class="justify">
         ${comment.comment}
         </p>
     </div>
-    
         `;
             }
         }
@@ -110,6 +110,7 @@ likebtn === null || likebtn === void 0 ? void 0 : likebtn.addEventListener('clic
     if (getcount == '1') {
         deleteLike();
         localStorage.setItem('count', '0');
+        localStorage.removeItem('count');
     }
     else {
         addlike();
@@ -117,26 +118,32 @@ likebtn === null || likebtn === void 0 ? void 0 : likebtn.addEventListener('clic
 });
 function addcomment() {
     return __awaiter(this, void 0, void 0, function* () {
-        const url = new URLSearchParams(window.location.search);
-        const blogId = url.get('id');
-        const comment = document.getElementById('comment');
-        const email = document.getElementById('email');
-        const names = document.getElementById('name');
-        const response = yield fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${blogId}/comments`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                name: names.value,
-                email: email.value,
-                comment: comment.value
-            })
-        });
-        const blog = yield response.json();
-        console.log(blog);
-        alert('Comment created successfully');
-        const commentsCountElement = document.getElementById('comments');
-        if (commentsCountElement) {
-            commentsCountElement.textContent = blog.data.comments.length.toString();
+        try {
+            const url = new URLSearchParams(window.location.search);
+            const blogId = url.get('id');
+            const comment = document.getElementById('comment');
+            const email = document.getElementById('email');
+            const names = document.getElementById('name');
+            const response = yield fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${blogId}/comments`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: names.value,
+                    email: email.value,
+                    comment: comment.value
+                })
+            });
+            const blog = yield response.json();
+            console.log(blog);
+            showPopup('Comment created successfully');
+            const commentsCountElement = document.getElementById('comments');
+            if (commentsCountElement) {
+                commentsCountElement.textContent = blog.data.comments.length.toString();
+            }
+            window.location.reload();
+        }
+        catch (err) {
+            showPopup('Error creating comment check your inputs');
         }
     });
 }

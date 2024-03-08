@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
-    <script src="./public/index.js" defer></script>
+    <div class="popup hide" id="popup">
+    </div>
+    <script src="./public/index.js" type="module" defer></script>
     <header>
         <nav>
             <div id="logo">
@@ -230,30 +232,29 @@
         <h1 class="center">Contact me</h1>
         <p class="center">Let's connect</p>
         <div class="input-fields">
-            <form action="https://mybrand-be-1-mzvx.onrender.com/api/queries" method="post">
+            <form action="" method="post">
                 <div class="inputs">
                     <div>
                         <label for="fname">Full name</label>
-                        <input type="text" name="name" class="input" id="fname" onkeyup="check('fname',0)">
+                        <input type="text" name="name" class="input" id="fname" onkeyup=>
                         <div class="alert"></div>
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="input" id="email" onkeyup="check('email',1)">
+                        <input type="email" name="email" class="input" id="email">
                         <div class="alert"></div>
                     </div> 
                 </div>
                 
                 <label for="message">Message</label>
-                <textarea name="query" id="message" class="input" cols="30" rows="5" placeholder="Your message here" onkeyup="check('message',2)"></textarea>
+                <textarea name="query" id="message" class="input" cols="30" rows="5" placeholder="Your message here"></textarea>
                 <div class="alert"></div>
-                <input type="checkbox" id="subs" /><label class="check" for="subs">Subscribe for our newsletter</label>
+                <!-- <input type="checkbox" id="subs" /><label class="check" for="subs">Subscribe for our newsletter</label>
                 <br>
                 <input type="checkbox"  id="terms"><label class="check" for="terms">I accept the terms</label>
-                <br> 
+                <br>  -->
                 <div class="centered">
                 <input type="submit" value="Submit" id="submit" class="button">
-    
                 </div>
             </form>
         </div>

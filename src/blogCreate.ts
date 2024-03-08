@@ -3,6 +3,7 @@ const contentEl = document.getElementById("editors") as HTMLTextAreaElement;
 const titleEl = document.getElementById("title") as HTMLInputElement;
 const formEl = document.querySelector("form") as HTMLFormElement;
 let url = new URLSearchParams(window.location.search);
+import {showPopup} from "./popup.js";
 const blogId = url.get('id');
 console.log(blogId);
 formEl.addEventListener("submit", (e) => {
@@ -48,7 +49,7 @@ async function createBlog() {
             return;
         }
         const data = await response.json();
-        alert(data.message);
+        showPopup('Blog created successfully');
     }
     catch (err) {
         console.log(err);
@@ -80,5 +81,5 @@ async function editBlog() {
         return;
     }
     const data = await responseUpdate.json();
-    alert('blog updated successfully');
+    showPopup('Blog updated successfully');
 }
