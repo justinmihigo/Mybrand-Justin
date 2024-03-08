@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
+    <div class="popup hide" id="popup">
+    </div>
     <header>
         <nav>
             <div id="logo">
@@ -126,24 +128,23 @@
             <div class="reactions">
                <span class="color" id="likes">1,200</span> &nbsp; <i class="fa-solid fa-heart" id="addLike"></i>&nbsp; &nbsp;
                <span class="color" id="comments">700</span>&nbsp;  <i class="fa-solid fa-comment"></i>&nbsp; &nbsp;
-               <span class="color" id="shares">123</span> &nbsp; <i class="fa-solid fa-share"></i>
             </div>
             <div>
                 <form class="padding">
                     <div class="flex">
                     <div>
                         <label for="name">Names</label>
-                        <input type="text" name="name" id="name" class="input" onkeyup="check('name',0)">
+                        <input type="text" name="name" id="name" class="input">
                         <div class="alert"></div>
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input type="text" name="email" class="input"  id="email" onkeyup="check('email',1)">
+                        <input type="text" name="email" class="input"  id="email">
                         <div class="alert"></div>
                     </div>
                     <div>
                     <label for="message">Message</label>
-                    <textarea name="comment" id="comment" class="input" cols="50" rows="5" placeholder="Your message here" onkeyup="check('message',2)"></textarea>
+                    <textarea name="comment" id="comment" class="input" cols="50" rows="5" placeholder="Your message here"></textarea>
                     <div class="alert"></div>
                         <button class="button">Comment</button>
                         
@@ -151,6 +152,6 @@
             </div>
         </section>
     </section>
-    <script src="../public/singleblog.js"></script>
+    <script src="../public/singleblog.js" type="module"></script>
 </body>
 </html>

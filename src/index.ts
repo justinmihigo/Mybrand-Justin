@@ -4,6 +4,7 @@ console.log(linksid);
 let aside = document.getElementById('aside')!;
 let hamburger = document.getElementById('bars')!;
 let closeBtn = document.getElementById('close')!;
+import { showPopup } from "./popup.js";
 hamburger.addEventListener('click', () => {
     hamburger.style.display = 'none';
     links.style.display = 'none';
@@ -52,3 +53,44 @@ async function getblogs() {
     }
 }
 getblogs();
+
+async function createQuery() {
+    try {
+        let fullnames = document.getElementById('fname') as HTMLInputElement;
+        let email = document.getElementById('email') as HTMLInputElement;
+        let query = document.getElementById('message') as HTMLInputElement;
+
+        let response = await fetch('https://mybrand-be-1-mzvx.onrender.com/api/queries', {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email.value,
+                name: fullnames.value,
+                query: query.value
+            })
+        })
+        let data = await response.json();
+        console.log(data);
+
+        if (data.error) {
+            showPopup('Invalid Inputs')
+        }
+        else {
+            showPopup('Query sent successfully');
+
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    let form = document.querySelector('form') as HTMLFormElement;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        createQuery();
+    })
+});
