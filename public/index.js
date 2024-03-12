@@ -98,3 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
         createQuery();
     });
 });
+function slides() {
+    let slides = document.querySelectorAll('.slider');
+    let index = 0;
+    let interval = setInterval(() => {
+        if (index === slides.length - 1) {
+            index = 0;
+        }
+        else {
+            index++;
+        }
+        slides[index].classList.add('background');
+        slides[index - 1].classList.remove('background');
+        if (slides[slides.length - 1].classList.contains('background')) {
+            slides[slides.length - 1].classList.remove('background');
+        }
+    }, 3000);
+}
+slides();

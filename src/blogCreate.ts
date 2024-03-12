@@ -11,15 +11,30 @@ formEl.addEventListener("submit", (e) => {
     if (!blogId) {
        createBlog();
         return;
+        
     }
     else {
         editBlog();
         return;
     }
-
-
 });
-
+if(blogId) {
+    const heading= document.getElementById("heading")!;
+        heading.innerHTML="Edit a  Blog";
+}
+function getToken() {
+    let token=localStorage.getItem('token');
+    if(!token){
+        window.location.href='../html-pages/adminLogin.html';
+    }
+}
+getToken();
+function logout() {
+    localStorage.removeItem('token');
+    window.location.href='../html-pages/adminLogin.html';
+}
+const logoutBtn=document.getElementById('logout')!;
+logoutBtn.addEventListener('click',logout);
 async function createBlog() {
     try {
         console.log('this is create')
@@ -50,6 +65,8 @@ async function createBlog() {
         }
         const data = await response.json();
         showPopup('Blog created successfully');
+        window.setTimeout(() => {window.location.href='../html-pages/articleList.html';},2000);
+
     }
     catch (err) {
         console.log(err);
@@ -69,10 +86,12 @@ async function editBlog() {
     formData.append("title", titleEl.value);
     formData.append("content", editor); // Get HTML content from Froala Editor
     console.log(id);
-    const responseUpdate = await fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${id}`, {
+    const token=localStorage.getItem("token");
+    console.log(token);
+    const responseUpdate = await fetch(`http://localhost:5000/api/blogs/${id}`, {
         method: "PATCH",
         headers: {
-            Authorization: "Bearer " + localStorage.getItem("token")
+            Authorization:`Bearer ${token}` 
         },
         body: formData
     });
@@ -81,5 +100,7 @@ async function editBlog() {
         return;
     }
     const data = await responseUpdate.json();
+    console.log(data);
     showPopup('Blog updated successfully');
+    window.setTimeout(() => {window.location.href='../html-pages/articleList.html';},2000);
 }

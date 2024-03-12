@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <script src="../public/logout.js" defer></script>
     <div class="popup hide" id="popup">
     </div>
     <header>
@@ -23,6 +24,7 @@
             <i class="fa-solid fa-bars" id="bars"></i>
             <input type="text" id="search" placeholder="Search">
             <a href="../index.html">Back to home</a>
+            <div id="logout" style="color:red; cursor:pointer">Logout</div>
             </div>
             <div class="status">
                 <span>
@@ -143,7 +145,10 @@
                         else if (e.target.className === 'green') {
                             window.location.href = `./articleCreate.html?id=${blog._id}`
                         }
-                        else if (e.target.className === 'red') {
+                    });
+                }
+                container.addEventListener('click', e => {
+                    if (e.target.className === 'red') {
                             let confirmed=confirm('Are you sure you want to delete this blog?');
                             if(confirmed){
                                 deleteBlog(e.target.dataset.blogId);
@@ -151,7 +156,6 @@
                             
                         }
                     });
-                }
             }
             catch (error) {
                 console.error(error);
