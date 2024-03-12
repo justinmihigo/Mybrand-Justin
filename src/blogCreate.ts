@@ -88,7 +88,7 @@ async function editBlog() {
     console.log(id);
     const token=localStorage.getItem("token");
     console.log(token);
-    const responseUpdate = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+    const responseUpdate = await fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${id}`, {
         method: "PATCH",
         headers: {
             Authorization:`Bearer ${token}` 

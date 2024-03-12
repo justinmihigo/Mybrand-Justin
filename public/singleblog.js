@@ -170,7 +170,7 @@ function deletecomment(commentId) {
         try {
             const url = new URLSearchParams(window.location.search);
             const blogId = url.get('id');
-            const response = yield fetch(`http://localhost:5000/api/blogs/${blogId}/comments/${commentId}`, {
+            const response = yield fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${blogId}/comments/${commentId}`, {
                 method: 'DELETE',
             });
             const blog = yield response.json();

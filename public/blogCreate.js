@@ -95,7 +95,7 @@ function editBlog() {
         console.log(id);
         const token = localStorage.getItem("token");
         console.log(token);
-        const responseUpdate = yield fetch(`http://localhost:5000/api/blogs/${id}`, {
+        const responseUpdate = yield fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${id}`, {
             method: "PATCH",
             headers: {
                 Authorization: `Bearer ${token}`
