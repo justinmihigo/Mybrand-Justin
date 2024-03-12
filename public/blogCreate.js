@@ -26,6 +26,23 @@ formEl.addEventListener("submit", (e) => {
         return;
     }
 });
+if (blogId) {
+    const heading = document.getElementById("heading");
+    heading.innerHTML = "Edit a  Blog";
+}
+function getToken() {
+    let token = localStorage.getItem('token');
+    if (!token) {
+        window.location.href = '../html-pages/adminLogin.html';
+    }
+}
+getToken();
+function logout() {
+    localStorage.removeItem('token');
+    window.location.href = '../html-pages/adminLogin.html';
+}
+const logoutBtn = document.getElementById('logout');
+logoutBtn.addEventListener('click', logout);
 function createBlog() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -54,6 +71,7 @@ function createBlog() {
             }
             const data = yield response.json();
             showPopup('Blog created successfully');
+            window.setTimeout(() => { window.location.href = '../html-pages/articleList.html'; }, 2000);
         }
         catch (err) {
             console.log(err);
@@ -75,10 +93,12 @@ function editBlog() {
         formData.append("title", titleEl.value);
         formData.append("content", editor); // Get HTML content from Froala Editor
         console.log(id);
-        const responseUpdate = yield fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${id}`, {
+        const token = localStorage.getItem("token");
+        console.log(token);
+        const responseUpdate = yield fetch(`http://localhost:5000/api/blogs/${id}`, {
             method: "PATCH",
             headers: {
-                Authorization: "Bearer " + localStorage.getItem("token")
+                Authorization: `Bearer ${token}`
             },
             body: formData
         });
@@ -87,6 +107,8 @@ function editBlog() {
             return;
         }
         const data = yield responseUpdate.json();
+        console.log(data);
         showPopup('Blog updated successfully');
+        window.setTimeout(() => { window.location.href = '../html-pages/articleList.html'; }, 2000);
     });
 }

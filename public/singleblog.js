@@ -62,13 +62,31 @@ function loadSingle() {
             for (let comment of blog.comments) {
                 recents.innerHTML += `
         <div class="message padding">
-        <p><b>${comment.name}</b> &nbsp; &nbsp;<span class="grey">${(comment.date).replace('T', ' ').substring(0, 15)}</span></p>
+        <p><b>${comment.name}</b> &nbsp; &nbsp;<span class="grey">${(comment.date).replace('T', ' ').substring(0, 16)}</span></p>
         <p class="justify">
         ${comment.comment}
+        </p>
+        <p class='del'>
+        <i class="fa-solid fa-trash" data-commentId='${comment._id}'></i>
         </p>
     </div>
         `;
             }
+        }
+        recents.addEventListener('click', e => {
+            let target = e.target;
+            if (target.classList.contains('fa-trash')) {
+                let commentId = target.getAttribute('data-commentId');
+                console.log(commentId);
+                deletecomment(commentId);
+            }
+        });
+        let deleteIcons = document.querySelectorAll('.del');
+        let token = localStorage.getItem('token');
+        if (!token) {
+            deleteIcons.forEach(delIcon => {
+                delIcon.style.display = 'none';
+            });
         }
     });
 }
@@ -144,6 +162,30 @@ function addcomment() {
         }
         catch (err) {
             showPopup('Error creating comment check your inputs');
+        }
+    });
+}
+function deletecomment(commentId) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const url = new URLSearchParams(window.location.search);
+            const blogId = url.get('id');
+            const response = yield fetch(`http://localhost:5000/api/blogs/${blogId}/comments/${commentId}`, {
+                method: 'DELETE',
+            });
+            const blog = yield response.json();
+            console.log(blog);
+            showPopup('Comment deleted successfully');
+            window.setTimeout(() => { window.location.reload; }, 2000);
+            // const commentsCountElement = document.getElementById('comments');
+            // if (commentsCountElement) {
+            //     commentsCountElement.textContent = blog.data.comments.length.toString();
+            // }
+            // window.location.reload();
+        }
+        catch (err) {
+            showPopup('Error deleting comment');
+            console.log(err);
         }
     });
 }
