@@ -160,7 +160,7 @@ async function deletecomment(commentId: string) {
     try {
         const url = new URLSearchParams(window.location.search);
         const blogId = url.get('id');
-        const response = await fetch(`http://localhost:5000/api/blogs/${blogId}/comments/${commentId}`, {
+        const response = await fetch(`https://mybrand-be-1-mzvx.onrender.com/api/blogs/${blogId}/comments/${commentId}`, {
             method: 'DELETE',
         });
         const blog = await response.json();
