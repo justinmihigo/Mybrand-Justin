@@ -91,6 +91,7 @@ nav{
   padding:30px 0;
 }
 .button, .feedback-btn{
+    cursor: pointer;
     padding:10px 20px;
     outline:none;
     border: none;
@@ -320,6 +321,7 @@ form{
     padding:6px 12px;
     border-radius: 10px;
     border:2px solid #FD6F00;
+    cursor: pointer;
 }
 textarea, select, input[type="text"], input[type="email"]{
     width:100%;
