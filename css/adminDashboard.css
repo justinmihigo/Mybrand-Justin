@@ -25,6 +25,7 @@ a{
 }
 .button a{
     color:white;
+    cursor: pointer;
 }
 #navlinks ul a{
     color: black;
@@ -134,6 +135,7 @@ i{
     width: 100%;
     background-color: var(--color);
     padding: 20px;
+    cursor: pointer;
 }
 .aside{
     display: flex;

@@ -67,7 +67,9 @@ form{
     color:white;
     background-color: var(--color);
     width: 100%;
+    cursor: pointer;
 }
+
 h1{
     padding-bottom: 20px;
 }

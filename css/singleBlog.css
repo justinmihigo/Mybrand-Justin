@@ -173,6 +173,7 @@ textarea{
     border-radius: 8px;
     color:white;
     background-color: var(--color);
+    cursor: pointer;
 }
 .popup{
     position: fixed;
