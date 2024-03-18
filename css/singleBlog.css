@@ -135,6 +135,7 @@ nav{
     align-items:center;
     gap:10px;
 }
+
 .view{
     display: flex;
     justify-content: space-between;
