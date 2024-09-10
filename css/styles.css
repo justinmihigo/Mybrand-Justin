@@ -208,7 +208,7 @@ h1{
     border-radius:10px;
     text-wrap: nowrap;
 }
-.links ul li:nth-child(2){
+.links ul li:nth-child(1){
     background-color: var(--color);
     color:white;
 }
